@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<as3v-config>
+	<!--
+		<define name="CONFIG::Debug" value="true"/>
+		<define name="CONFIG::Release" value="false"/>
+	-->
+	<validator>
+		<rule class="com.joa_ebert.as3v.rules.joa_ebert.ArrayPromotionRule"/>
+		<!-- <rule class="com.joa_ebert.as3v.rules.joa_ebert.AvoidAsCastRule"/> -->
+		<rule class="com.joa_ebert.as3v.rules.joa_ebert.AvoidDeeplyNestedIfRule"/>
+		<rule class="com.joa_ebert.as3v.rules.joa_ebert.AvoidMultipleUnaryOperatorsRule"/>
+		<rule class="com.joa_ebert.as3v.rules.joa_ebert.BindingShouldBeStaticRule"/>
+		<rule class="com.joa_ebert.as3v.rules.joa_ebert.ConstructorDensityRule"/>
+		<rule class="com.joa_ebert.as3v.rules.joa_ebert.CorrectNumberLiteralRule"/>
+		<rule class="com.joa_ebert.as3v.rules.joa_ebert.CyclomaticComplexityRule"/>
+		<rule class="com.joa_ebert.as3v.rules.joa_ebert.DefaultLastLabelRule"/>
+		<rule class="com.joa_ebert.as3v.rules.joa_ebert.EmptyCatchRule"/>
+		<rule class="com.joa_ebert.as3v.rules.joa_ebert.EmptyDoRule"/>
+		<rule class="com.joa_ebert.as3v.rules.joa_ebert.EmptyElseRule"/>
+		<rule class="com.joa_ebert.as3v.rules.joa_ebert.EmptyFinallyRule"/>
+		<rule class="com.joa_ebert.as3v.rules.joa_ebert.EmptyForRule"/>
+		<rule class="com.joa_ebert.as3v.rules.joa_ebert.EmptyIfRule"/>
+		<rule class="com.joa_ebert.as3v.rules.joa_ebert.EmptySwitchRule"/>
+		<rule class="com.joa_ebert.as3v.rules.joa_ebert.EmptyTryRule"/>
+		<rule class="com.joa_ebert.as3v.rules.joa_ebert.EmptyWhileRule"/>
+		<rule class="com.joa_ebert.as3v.rules.joa_ebert.ForCouldBeWhileRule"/>
+		<rule class="com.joa_ebert.as3v.rules.joa_ebert.ForPrefixRule"/>
+		<rule class="com.joa_ebert.as3v.rules.joa_ebert.JumbledIncrementerRule"/>
+		<rule class="com.joa_ebert.as3v.rules.joa_ebert.LocalVariableIsNeverReadRule"/>
+		<rule class="com.joa_ebert.as3v.rules.joa_ebert.MathAbsRule"/>
+		<rule class="com.joa_ebert.as3v.rules.joa_ebert.MathMaxRule"/>
+		<rule class="com.joa_ebert.as3v.rules.joa_ebert.MathMinRule"/>
+		<rule class="com.joa_ebert.as3v.rules.joa_ebert.NestedIfRule"/>
+		<rule class="com.joa_ebert.as3v.rules.joa_ebert.NoConstInLoopRule"/>
+		<rule class="com.joa_ebert.as3v.rules.joa_ebert.NoDynamicClassRule"/>
+		<!--
+			<rule class="com.joa_ebert.as3v.rules.joa_ebert.NullAssignmentRule"/>
+		-->
+		<rule class="com.joa_ebert.as3v.rules.joa_ebert.PrivateVariableIsNeverReadRule"/>
+		<rule class="com.joa_ebert.as3v.rules.joa_ebert.RepeatedStringLiteralRule"/>
+		<rule class="com.joa_ebert.as3v.rules.joa_ebert.SwitchDensityRule"/>
+		<rule class="com.joa_ebert.as3v.rules.joa_ebert.UnconditionalIfStatementRule"/>
+		<rule class="com.joa_ebert.as3v.rules.joa_ebert.UnneccessaryCalculationsRule"/>
+		<rule class="com.joa_ebert.as3v.rules.joa_ebert.UnneccessaryFinalModifierRule"/>
+		<rule class="com.joa_ebert.as3v.rules.joa_ebert.UnreachableCodeRule"/>
+		<rule class="com.joa_ebert.as3v.rules.joa_ebert.UntypedVariableBindingRule"/>
+		<rule class="com.joa_ebert.as3v.rules.joa_ebert.UseBinaryOperatorRule"/>
+		<rule class="com.joa_ebert.as3v.rules.joa_ebert.UseRadiansRule"/>
+		<!--
+			<rule class="com.joa_ebert.as3v.rules.joa_ebert.VariableShouldBeConstantRule"/>
+		-->
+		<rule class="com.joa_ebert.as3v.rules.joa_ebert.VectorInsteadOfArrayRule"/>
+		<rule class="com.joa_ebert.as3v.rules.joa_ebert.naming.ClassNameRule"/>
+		<rule class="com.joa_ebert.as3v.rules.joa_ebert.naming.InternalMethodNameRule"/>
+		<rule class="com.joa_ebert.as3v.rules.joa_ebert.naming.InternalVariableNameRule"/>
+		<rule class="com.joa_ebert.as3v.rules.joa_ebert.naming.LocalVariableNameRule"/>
+		<rule class="com.joa_ebert.as3v.rules.joa_ebert.naming.PrivateMethodNameRule"/>
+		<rule class="com.joa_ebert.as3v.rules.joa_ebert.naming.PrivateVariableNameRule" regexp="^_[a-z](\w+)?$" message="Private variable &quot;%s&quot; should start with an underscore."/>
+		<rule class="com.joa_ebert.as3v.rules.joa_ebert.naming.ProtectedMethodNameRule"/>
+		<rule class="com.joa_ebert.as3v.rules.joa_ebert.naming.ProtectedVariableNameRule" regexp="^_[a-z](\w+)?$" message="Protected variable &quot;%s&quot; should start with a underscore."/>
+		<rule class="com.joa_ebert.as3v.rules.joa_ebert.naming.PublicMethodNameRule"/>
+		<rule class="com.joa_ebert.as3v.rules.joa_ebert.naming.PublicVariableNameRule"/>
+		<rule class="com.joa_ebert.as3v.rules.joa_ebert.naming.SetterParameterNameRule"/>
+		<rule class="com.joa_ebert.as3v.rules.joa_ebert.naming.StaticConstantNameRule"/>
+	</validator>
+</as3v-config>

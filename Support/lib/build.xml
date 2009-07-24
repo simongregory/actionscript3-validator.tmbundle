@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<project name="as3v-tests" default="main" basedir=".">
+	
+	<!--
+		IMPORTANT:
+			Change the property of flex.sdk to the location of your
+			Flex SDK.
+		
+		Running the flexSDK task is requires that flex.sdk points to a Flex SDK
+		that has been checked out from opensource.adobe.com
+	-->
+	
+	<property name="flex.sdk" location="C:/Development/FLEX_SDK"/>
+	<property name="asc.jar" location="${flex.sdk}/lib/asc.jar"/>
+	<property name="as3v.jar" location="${basedir}/as3v.jar"/>
+	
+	<taskdef name="as3v" classname="com.joa_ebert.as3v.embedding.ant.AS3VTask" classpath="${as3v.jar}"/>
+	
+	<path id="as3v.classpath">
+		<pathelement path="${java.class.path}"/>
+		<pathelement location="${asc.jar}"/>
+		<pathelement location="${as3v.jar}"/>
+	</path>
+			
+	<target name="main">
+		<!--
+			A simple example of invoking AS3V
+		-->
+		<as3v>
+			<classpath refid="as3v.classpath"/>
+			<sourcePath directory="${basedir}/examples"/>
+		</as3v>
+	</target>
+	
+	<target name="flexSDK">
+		<!--
+			A more complex example of AS3V using more memory
+			and a forked VM.
+		-->
+		<as3v fork="true" logLevel="0" failLevel="5">
+			<jvmarg line="-Xms64m -Xmx384m"/>
+			<classpath refid="as3v.classpath"/>
+			
+			<define name="CONFIG::Debug" value="false"/>
+			<define name="CONFIG::Release" value="true"/>
+			
+			<sourcePath directory="${flex.sdk}/frameworks/projects/framework/src"/>
+			
+			<!--
+				Include-files have to be excluded manually.
+			-->
+			<excludeClass name="mx.core.Version"/>
+		</as3v>
+	</target>
+</project>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>name</key>
+	<string>ActionScript 3 Validator</string>
+	<key>ordering</key>
+	<array>
+		<string>C5303CBA-420D-49E7-8F5A-948E5C0C5C3E</string>
+		<string>1B6F625F-A746-4845-963B-877D28D32FA8</string>
+	</array>
+	<key>uuid</key>
+	<string>0A883776-829F-457F-933E-CC0D133985DF</string>
+</dict>
+</plist>
