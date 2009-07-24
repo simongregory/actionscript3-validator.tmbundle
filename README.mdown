@@ -1,0 +1,60 @@
+TextMate ActionScript 3 Bundle
+==============================
+
+This bundle gives TextMate support for [Joa Ebert's](http://blog.joa-ebert.com/) AS3V tool. 
+
+Further info can be found 
+[here](http://blog.joa-ebert.com/2008/10/06/as3v/), 
+[here](http://blog.joa-ebert.com/2009/05/20/as3v-preview/), 
+[here](http://blog.joa-ebert.com/2009/05/18/the-return-of-as3v/), and
+[here](http://blog.joa-ebert.com/2009/06/26/as3v-for-ant-released/).
+
+Source for AS3V can be found [http://code.google.com/p/as3v/](http://code.google.com/p/as3v/).
+ 
+Installation
+------------
+
+To install via Git:
+
+		cd ~/"Library/Application Support/TextMate/Bundles/"
+		git clone git://github.com/simongregory/actionscript3-validator.tmbundle.git "ActionScript 3 Validator.tmbundle"
+		osascript -e 'tell app "TextMate" to reload bundles'
+
+Source can be viewed or forked via GitHub: [http://github.com/simongregory/actionscript3-validator.tmbundle/tree/master](http://github.com/simongregory/actionscript3-validator.tmbundle/tree/master)
+
+Support
+-------
+
+Please use the TextMate Users mailing list [http://lists.macromates.com/listinfo/textmate](http://lists.macromates.com/listinfo/textmate).
+
+Maintainer
+----------
+
+[Simon Gregory](http://blog.simonregory.com)
+
+License
+-------
+
+If not otherwise specified (see below), files in this project fall under the following license:
+
+		Copyright 2009 Simon Gregory
+
+		Permission is hereby granted, free of charge, to any person obtaining a copy
+		of this software and associated documentation files (the "Software"), to deal
+		in the Software without restriction, including without limitation the rights
+		to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+		copies of the Software, and to permit persons to whom the Software is
+		furnished to do so, subject to the following conditions:
+
+		The above copyright notice and this permission notice shall be included in
+		all copies or substantial portions of the Software.
+
+		THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+		IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+		FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+		AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+		LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+		OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+		THE SOFTWARE.
+
+An exception is made for files in readable text which contain their own license information, or files where an accompanying file exists (in the same directory) with a “-license” suffix added to the base-name name of the original file, and an extension of txt, html, or similar.
