@@ -2,10 +2,13 @@
 
 require ENV['TM_SUPPORT_PATH'] + '/lib/escape'
 require ENV['TM_SUPPORT_PATH'] + '/lib/tm/process'
+require ENV['TM_SUPPORT_PATH'] + '/lib/textmate'
 
 lib = File.expand_path(File.dirname(__FILE__)) + '/../lib'
 
 flex_path = ENV['TM_FLEX_PATH']
+
+TextMate.exit_show_html("Please create the env var TM_FLEX_PATH and point it to the root of your Flex SDK.") unless flex_path
 
 as3v_jar  = e_sh(lib + '/as3v.jar')
 asc_jar   = e_sh(flex_path + '/lib/asc.jar')
