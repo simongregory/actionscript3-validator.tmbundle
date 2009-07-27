@@ -47,9 +47,9 @@
 		<rule class="com.joa_ebert.as3v.rules.joa_ebert.UseBinaryOperatorRule"/>
 		<rule class="com.joa_ebert.as3v.rules.joa_ebert.UseRadiansRule"/>
 		<!--
-			<rule class="com.joa_ebert.as3v.rules.joa_ebert.VariableShouldBeConstantRule"/>
+			<rule class="com.joa_ebert.as3v.rules.joa_ebert.VariableShouldBeConstantRule"/>		
+			<rule class="com.joa_ebert.as3v.rules.joa_ebert.VectorInsteadOfArrayRule"/>
 		-->
-		<rule class="com.joa_ebert.as3v.rules.joa_ebert.VectorInsteadOfArrayRule"/>
 		<rule class="com.joa_ebert.as3v.rules.joa_ebert.naming.ClassNameRule"/>
 		<rule class="com.joa_ebert.as3v.rules.joa_ebert.naming.InternalMethodNameRule"/>
 		<rule class="com.joa_ebert.as3v.rules.joa_ebert.naming.InternalVariableNameRule"/>
