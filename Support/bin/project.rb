@@ -17,7 +17,7 @@ conf      = e_sh(lib + '/as3v-default.xml')
 
 @src      = e_sh(ENV['TM_PROJECT_DIRECTORY']+'/src')
 
-cmd = "java -jar #{as3v_jar} -asc #{asc_jar} -source-path #{@src} -use-config #{conf}"
+cmd = "java -Xms64m -Xmx384m -jar #{as3v_jar} -asc #{asc_jar} -source-path #{@src} -use-config #{conf}"
 
 # Example input
 # [i] AS3V working ...
