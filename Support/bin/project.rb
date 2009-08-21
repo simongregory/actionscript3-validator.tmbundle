@@ -4,7 +4,8 @@ require ENV['TM_SUPPORT_PATH'] + '/lib/escape'
 require ENV['TM_SUPPORT_PATH'] + '/lib/tm/process'
 require ENV['TM_SUPPORT_PATH'] + '/lib/textmate'
 
-lib = File.expand_path(File.dirname(__FILE__)) + '/../lib'
+BUN_BIN = File.expand_path(File.dirname(__FILE__))
+lib = "#{BUN_BIN}/../lib"
 
 flex_path = ENV['TM_FLEX_PATH']
 
@@ -44,24 +45,51 @@ def link(level,str)
   
   if str =~ @link
 
+    #NOTE: The column number isn't accurate and will depend on your tab/space settings.
+    #      Basically as3v treats a tab as a single char/column whereas TM will expand it.
     c = $1
     ln = $2
     col = $3
     msg = $4
+    tip = "#{c} #{ln},#{col}"
     fp = @src + '/' + c.gsub('.','/')+'.as'
     cn  = File.basename(fp).sub('.as','')
 
-    return '['+level+'] <a href="txmt://open?url=file://' + fp +
+    id = cn+ln+col
+    fix = ''
+    
+    if msg =~ /Use\sNumber\sliterals\./
+
+      fix = '<div id="'+id+'" style="display:inline;"><a href="javascript:makeCorrection(\'' + e_url(fp) + '\', ' + ln  + ', ' + col + ', \'' + id + '\', \'numberLiterals\');">fix</a></div>'
+
+    elsif msg =~ /prefix\sinstead\sof\spostix/
+
+      fix = '<div id="'+id+'" style="display:inline;"><a href="javascript:makeCorrection(\'' + e_url(fp) + '\', ' + ln  + ', ' + col + ', \'' + id + '\', \'correctPostix\');">change</a></div>'
+    
+    elsif msg =~ /Variable is not modified and could be constant/
+      
+      fix = '<div id="'+id+'" style="display:inline;"><a href="javascript:makeCorrection(\'' + e_url(fp) + '\', ' + ln  + ', ' + col + ', \'' + id + '\', \'variableShouldBeConstant\');">change</a></div>'
+
+    end
+
+    return '['+level+'] <a title="' + tip + '" href="txmt://open?url=file://' + fp +
           '&line='+ ln +
           '&column=' + col +
           '" >' + cn +
-          '</a>' + msg +
-          '<br/>'
-    
+          '</a>' + msg + 
+          ' ' + fix +
+          '<br/>
+'
+    # 
   end
   
   '['+level+'] ' + str + '<br/>'
   
+end
+
+# first escape for use in the shell, then escape for use in a JS string
+def e_js_sh(str)
+  (e_sh str).gsub("\\", "\\\\\\\\")
 end
 
 require ENV['TM_SUPPORT_PATH'] + '/lib/web_preview'
@@ -69,10 +97,15 @@ require ENV['TM_SUPPORT_PATH'] + '/lib/web_preview'
 puts html_head( :window_title => "ActionScript 3 Validator",
                 :page_title => "ActionScript 3 Validator")
 
+puts	"<link rel='stylesheet' href='file://#{e_url(BUN_BIN)}/../css/validate.css' type='text/css' charset='utf-8' media='screen'>"
+puts  "<script src='file://#{e_url(BUN_BIN)}/../js/validate.js' type='text/javascript' charset='utf-8'></script>"
+puts "<div id='script-path'>#{BUN_BIN}/</div>"
 puts "<h2>Validating...</h2>"
 
 TextMate::Process.run(cmd) do |str|
   STDOUT << parse(str)
 end
+
+puts "<div id='tracer'></div>"
 
 html_footer
